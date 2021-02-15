@@ -12,7 +12,7 @@ const
     router          = require('./routes/router'),
     database        = require('./lib/database'),
     app             = express(),                  // create app w/ express
-    port            = 443,
+    port            = 4200,
 
     cors            = require("cors");
 
@@ -50,8 +50,8 @@ class Server {
         app.use(express.static(__dirname + '/dist/Prospection-Manager'));
         app.use(morgan('dev'));
 
-        app.set('port', process.env.PORT || port);
-        app.set('view engine', 'pug');
+        // app.set('port', process.env.PORT || port);
+        // app.set('view engine', 'pug');
 
         app.use(bodyParser.urlencoded({ extended: true }));   // parse application/x-www-form-urlencoded
         app.use(bodyParser.json()); // parse application/json

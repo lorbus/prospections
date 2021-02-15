@@ -95,8 +95,7 @@
             "styles": [
               "src/styles.css"
             ],
-            "scripts": [],
-            "es5BrowserSupport": false
+            "scripts": []
           }
         },
         "lint": {

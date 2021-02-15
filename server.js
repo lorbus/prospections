@@ -58,13 +58,12 @@ class Server {
         app.use(errorhandler());
         app.use(cookieParser());
 
-        /*
         var corsOptions = {
-          origin: "https://prospections.ufc.ch",
+          origin: "https://prospections.herokuapp.com/",
           optionsSuccessStatus: 200 // some legacy browsers (IE11, various SmartTVs) choke on 204
         };
         app.use(cors(corsOptions));
-        */
+
 
         // app.use(bodyParser.json({ type: 'application/vnd.api+json' })); // parse application/vnd.api+json as json
         app.use(bodyParser.json())

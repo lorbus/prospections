@@ -28,7 +28,8 @@
               "src/styles.css",
               "node_modules/ngx-toastr/toastr.css"
             ],
-            "scripts": []
+            "scripts": [],
+            "es5BrowserSupport": false
           },
           "configurations": {
             "production": {
@@ -94,7 +95,8 @@
             "styles": [
               "src/styles.css"
             ],
-            "scripts": []
+            "scripts": [],
+            "es5BrowserSupport": false
           }
         },
         "lint": {

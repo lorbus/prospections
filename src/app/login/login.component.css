@@ -1,0 +1,23 @@
+.login-form input[type='text'], 
+.login-form input[type='email'],
+.login-form input[type='password'] {
+    width:75%;
+}
+
+.login-form .ng-invalid {
+  border-left: 5px solid #a94442;
+}
+
+.login-form .ng-valid {
+  border-left: 5px solid #42A948;
+}
+
+.errorMsg {
+  color: red;
+  font-weight: bold;
+}
+
+.lockImgHead {
+  width: 50%;
+  margin-left: 23%;
+}

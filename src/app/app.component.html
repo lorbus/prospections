@@ -1,0 +1,47 @@
+<main class="container">
+
+    <header class="navbar navbar-inner navbar-fixed-top">
+
+        <nav class="container">
+
+            <div class="navbar-header" style="width:100%;">
+
+                <ul class="nav navbar-nav nav-pills navBarPadding" style="width:100%;">
+
+                    <li>
+                        <a href="https://www.ufc.ch" target="_blank" style="text-decoration:none; height:55px;" 
+                            title="Union of Financial Corners SA (UFC)">
+                            <img src="/assets/images/ufclogo.svg" alt="logo" width="90" height="50">
+                        </a>
+                    </li>
+
+                    <li routerLinkActive="active" style="margin-top:10px; margin-left:50px;">
+                        <a routerLink="/customers">Prospection Manager</a>
+                    </li>
+    
+                    <li routerLinkActive="active" 
+                        [hidden]="loginLogoutText==='Login'" 
+                        style="margin-top:10px; float:right;" 
+                        (click)="loginOrOut()" routerLink="/login">
+                            <a>
+                                {{ loginLogoutText }}
+                                <i class="fa fa-sign-out" aria-hidden="true"></i>
+                            </a>
+                    </li>
+
+                    <li [hidden]="!loginUserText" 
+                        style="float:right; font-weight:bold; color:#8a1515; margin-top:17px; cursor:default;"> 
+                        {{ loginUserText | uppercase  }} 
+                    </li>
+
+                </ul>
+
+            </div>
+
+        </nav>
+        
+    </header>
+
+    <router-outlet></router-outlet>
+
+</main>

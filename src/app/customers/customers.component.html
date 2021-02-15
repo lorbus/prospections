@@ -1,0 +1,106 @@
+<div class="customers view indent" style="margin-top:15px;">
+
+    <div class="container">
+
+        <div class="row">
+
+            <div class="col-md-2" style="width:28%;">
+                <div class="navbar">
+                    <app-filter-textbox (changed)="filterChanged($event)"></app-filter-textbox>
+                </div>
+            </div>
+
+            <div class="col-md-5" style="margin-top:4px; font-weight:bold; color:#337ab7;">
+                <div [hidden]="filteredCustomers.length === 0 || filterText === ''">
+                    Prospections Found ({{ filteredCustomers.length }})
+                </div>
+            </div>
+            
+            <div class="col-md-1" style="float:left;">
+                <a class="btn btn-success" title="Search on Map by postal code, name etc." 
+                    target="_blank" 
+                    href="https://map.geo.admin.ch/?topic=cadastre&lang=en&bgLayer=ch.swisstopo.pixelkarte-farbe&catalogNodes=15040">
+                    Check in Map
+                    <i class="fa fa-external-link" aria-hidden="true"></i>                    
+                </a>
+            </div>
+
+            <div class="col-md-2" style="float:right;">
+                <a title="Create New Prospection" class="btn btn-success" [routerLink]="['/customers', '0']">
+                    <i class="fa fa-plus" aria-hidden="true"></i>
+                    Add New Prospection 
+                </a>
+            </div>
+            
+        </div>
+        
+        <div class="form-control marginBottom20 marginLeft20" style="height:auto; width:96%;">
+
+            <div>
+                <label>Prospection Start Date: </label>
+                <input type="date" 
+                        class="marginLeft20"
+                        style="width:220px"
+                        name="startDate" 
+                        (change)="dateStartChanged($event.target.valueAsDate)"
+                        [ngModel]="customer.startDate | date:'yyyy-MM-dd'" 
+                        #startDate="ngModel" 
+                        title="Month/Day/Year"
+                />
+
+                <label class="marginLeft20">Prospection End Date: </label>
+                <input type="date" 
+                        class="marginLeft20"
+                        style="width:220px"
+                        name="endDate" 
+                        (change)="dateEndChanged($event.target.valueAsDate)"
+                        [ngModel]="customer.endDate | date:'yyyy-MM-dd'" 
+                        #endDate="ngModel" 
+                        title="Month/Day/Year"
+                />
+
+                <button class="btn btn-info marginLeft20"
+                        (click)="searchByDate()"
+                        [disabled]="!customer.startDate || !customer.endDate"
+                        title="Select Start Date and End Date"
+                        >
+                        <i class="fa fa-search" aria-hidden="true"></i>
+                        Search
+                </button>
+                
+                <a class="marginLeft20" style="font-weight:bold; cursor:pointer;"
+                   (click)="clearDateFilters()"
+                   [hidden]="!customer.startDate || !customer.endDate"
+                >
+                    Clear Date Filter
+                </a>
+
+                <label class="marginLeft20" [hidden]="!showDateFilterFoundLabel">
+                    Prospections Found ({{ filteredCustomers.length }})
+                </label>                
+
+            </div>
+
+        </div>
+
+        <app-customers-grid [customers]="filteredCustomers"></app-customers-grid>
+        
+        <div [hidden]="customers.length === 0">
+            <app-pagination 
+                [totalItems]="totalRecords" 
+                [pageSize]="pageSize" 
+                (pageChanged)="pageChanged($event)"
+                style="margin-right:30px;"
+                >
+            </app-pagination>
+
+            <button class="btn btn-warning" style="float: right; margin-top:-40px; margin-right:35px;"
+                    (click)="downloadCSV()">
+                    <i class="fa fa-download" aria-hidden="true"></i>
+                    Download CSV
+            </button>
+
+        </div>
+          
+    </div>
+</div>

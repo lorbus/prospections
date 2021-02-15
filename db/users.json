@@ -1,0 +1,89 @@
+[{
+  "_id": {
+    "$oid": "60056769a60ec1198c28e019"
+  },
+  "firstName": "Manuk",
+  "lastName": "Haroian",
+  "email": "manuk.haroian@ufc.ch",
+  "address": "",
+  "phone": "41791295050",
+  "password": "reset100",
+  "role": "BDM"
+},{
+  "_id": {
+    "$oid": "60056853a60ec1198c28e01a"
+  },
+  "firstName": "Kreshnik",
+  "lastName": "Sadiku",
+  "email": "kreshnik.sadiku@ufc.ch",
+  "address": "",
+  "phone": "41765581208",
+  "password": "reset100",
+  "role": "BDM"
+},{
+  "_id": {
+    "$oid": "60069cd9a60ec1198c28e01b"
+  },
+  "firstName": "Bashkim",
+  "lastName": "Haliti",
+  "email": "bashkim.haliti@ufc.ch",
+  "address": "",
+  "phone": "41767006001",
+  "password": "reset100",
+  "role": "BDM"
+},{
+  "_id": {
+    "$oid": "60069d21a60ec1198c28e01c"
+  },
+  "firstName": "Andi",
+  "lastName": "Gjonej",
+  "email": "andi.gjonej@ufc.ch",
+  "address": "",
+  "phone": "41798255492",
+  "password": "reset100",
+  "role": "CEO"
+},{
+  "_id": {
+    "$oid": "60069da9a60ec1198c28e01d"
+  },
+  "firstName": "Bendis",
+  "lastName": "Gjonej",
+  "email": "bendis.gjonej@ufc.ch",
+  "address": "",
+  "phone": "41798335535",
+  "password": "reset100",
+  "role": "MANAGER"
+},{
+  "_id": {
+    "$oid": "60069e0da60ec1198c28e01e"
+  },
+  "firstName": "Alban",
+  "lastName": "Bilalli",
+  "email": "alban.bilalli@ufc.ch",
+  "address": "",
+  "phone": "41789045566",
+  "password": "reset100",
+  "role": "MANAGER"
+},{
+  "_id": {
+    "$oid": "60069e92a60ec1198c28e01f"
+  },
+  "firstName": "Lorenc",
+  "lastName": "Bushati",
+  "email": "lorenc.bushati@ufc.ch",
+  "address": "",
+  "phone": "41791545050",
+  "password": "reset100",
+  "role": "MANAGER"
+},{
+  "_id": {
+    "$oid": "60069edba60ec1198c28e020"
+  },
+  "firstName": "Tarek",
+  "lastName": "Watfa",
+  "email": "tarek.watfa@ufc.ch",
+  "address": "",
+  "phone": "41786260512",
+  "password": "reset100",
+  "role": "IT"
+}]

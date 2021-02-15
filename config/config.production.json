@@ -1,0 +1,6 @@
+{
+    "databaseConfig": {
+        "host": "ufcmongodb:UFC2005ufc!.@cluster0.xtwx0.mongodb.net",
+        "database": "prospectionmanager?retryWrites=true&w=majority"
+    }
+}

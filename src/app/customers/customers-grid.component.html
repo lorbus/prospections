@@ -1,0 +1,159 @@
+<div class="container">
+
+    <div class="row grid-container">
+
+        <div class="col-md-12">
+
+            <div class="table" style="overflow-x:scroll;">
+
+                <table class="table table-striped table-hover">
+
+                    <thead>
+                        <tr>
+
+                            <th (click)="sort('businessName')">
+                                Business Names 
+                                <span [hidden]="sorter.property!='businessName'" style="float:right;">
+                                    <i [hidden]="sorter.direction!=-1" class="fa fa-sort-asc"></i>
+                                    <i [hidden]="sorter.direction!=1" class="fa fa-sort-desc"></i>
+                                </span>
+                            </th>
+                            <th (click)="sort('prospectionDate')">
+                                Prosp. Date
+                                <span [hidden]="sorter.property!='prospectionDate'" style="float:right;">
+                                    <i [hidden]="sorter.direction!=-1" class="fa fa-sort-asc"></i>
+                                    <i [hidden]="sorter.direction!=1" class="fa fa-sort-desc"></i>
+                                </span>
+                            </th>                               
+                            <th (click)="sort('bdmName')">
+                                BDM Name
+                                <span [hidden]="sorter.property!='bdmName'" style="float:right;">
+                                    <i [hidden]="sorter.direction!=-1" class="fa fa-sort-asc"></i>
+                                    <i [hidden]="sorter.direction!=1" class="fa fa-sort-desc"></i>
+                                </span>
+                            </th>                                         
+                            <th (click)="sort('locationName')">
+                                Location Name
+                                <span [hidden]="sorter.property!='locationName'" style="float:right;">
+                                    <i [hidden]="sorter.direction!=-1" class="fa fa-sort-asc"></i>
+                                    <i [hidden]="sorter.direction!=1" class="fa fa-sort-desc"></i>
+                                </span>
+                            </th>                              
+                            <th (click)="sort('firstName')">
+                                First Name
+                                <span [hidden]="sorter.property!='firstName'" style="float:right;">
+                                    <i [hidden]="sorter.direction!=-1" class="fa fa-sort-asc"></i>
+                                    <i [hidden]="sorter.direction!=1" class="fa fa-sort-desc"></i>
+                                </span>
+                            </th>                                
+                            <th (click)="sort('lastName')">
+                                Last Name
+                                <span [hidden]="sorter.property!='lastName'" style="float:right;">
+                                    <i [hidden]="sorter.direction!=-1" class="fa fa-sort-asc"></i>
+                                    <i [hidden]="sorter.direction!=1" class="fa fa-sort-desc"></i>
+                                </span>
+                            </th>                              
+                            <th (click)="sort('role')">
+                                Role
+                                <span [hidden]="sorter.property!='role'" style="float:right;">
+                                    <i [hidden]="sorter.direction!=-1" class="fa fa-sort-asc"></i>
+                                    <i [hidden]="sorter.direction!=1" class="fa fa-sort-desc"></i>
+                                </span>
+                            </th>
+                            <th (click)="sort('phone')">
+                                Phone
+                                <span [hidden]="sorter.property!='phone'" style="float:right;">
+                                    <i [hidden]="sorter.direction!=-1" class="fa fa-sort-asc"></i>
+                                    <i [hidden]="sorter.direction!=1" class="fa fa-sort-desc"></i>
+                                </span>
+                            </th>
+                            <th (click)="sort('address')">
+                                Address
+                                <span [hidden]="sorter.property!='address'" style="float:right;">
+                                    <i [hidden]="sorter.direction!=-1" class="fa fa-sort-asc"></i>
+                                    <i [hidden]="sorter.direction!=1" class="fa fa-sort-desc"></i>
+                                </span>
+                            </th>
+                            <th (click)="sort('state.zip')">
+                                ZIP
+                                <span [hidden]="sorter.property!='state.zip'" style="float:right;">
+                                    <i [hidden]="sorter.direction!=-1" class="fa fa-sort-asc"></i>
+                                    <i [hidden]="sorter.direction!=1" class="fa fa-sort-desc"></i>
+                                </span>
+                            </th>
+                            <th (click)="sort('state.name')">
+                                City
+                                <span [hidden]="sorter.property!='state.name'" style="float:right;">
+                                    <i [hidden]="sorter.direction!=-1" class="fa fa-sort-asc"></i>
+                                    <i [hidden]="sorter.direction!=1" class="fa fa-sort-desc"></i>
+                                </span>
+                            </th>
+                            <th (click)="sort('state.abbreviation')">
+                                Canton
+                                <span [hidden]="sorter.property!='state.abbreviation'" style="float:right;">
+                                    <i [hidden]="sorter.direction!=-1" class="fa fa-sort-asc"></i>
+                                    <i [hidden]="sorter.direction!=1" class="fa fa-sort-desc"></i>
+                                </span>
+                            </th>
+                            <th (click)="sort('pending')">
+                                Pending
+                                <span [hidden]="sorter.property!='pending'" style="float:right;">
+                                    <i [hidden]="sorter.direction!=-1" class="fa fa-sort-asc"></i>
+                                    <i [hidden]="sorter.direction!=1" class="fa fa-sort-desc"></i>
+                                </span>
+                            </th>
+                            <th (click)="sort('archivedReason')">
+                                Archive Reason
+                                <span [hidden]="sorter.property!='archivedReason'" style="float:right;">
+                                    <i [hidden]="sorter.direction!=-1" class="fa fa-sort-asc"></i>
+                                    <i [hidden]="sorter.direction!=1" class="fa fa-sort-desc"></i>
+                                </span>
+                            </th>
+                            <th (click)="sort('archiveDate')">
+                                Archive Date
+                                <span [hidden]="sorter.property!='archiveDate'" style="float:right;">
+                                    <i [hidden]="sorter.direction!=-1" class="fa fa-sort-asc"></i>
+                                    <i [hidden]="sorter.direction!=1" class="fa fa-sort-desc"></i>
+                                </span>
+                            </th>
+
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        <tr *ngFor="let customer of customers;trackBy:trackby.customer">
+                            
+                            <td><a style="font-weight:bold;" title="Edit Prospection" [routerLink]="['/customers', customer._id]">{{ customer.businessName }}</a></td>
+                            <td style="font-weight:bold;">{{ customer.prospectionDate | date }}</td>
+                            <td>{{ customer.bdmName }}</td>                           
+                            <td>{{ customer.locationName }}</td>
+                            <td>{{ customer.firstName }}</td>
+                            <td style="font-weight:bold;">{{ customer.lastName | uppercase }}</td>
+                            <td>{{ customer.role | uppercase }}</td>
+                            <td style="font-weight:bold;">{{ customer.phone }}</td>
+                            <td>{{ customer.address }}</td>
+                            <td style="font-weight:bold;">{{ customer.state.zip }}</td>
+                            <td>{{ customer.state.name | trim }}</td>
+                            <td>{{ customer.state.abbreviation }}</td>
+                            <td style="font-weight:bold;">{{ customer.pending }}</td>
+                            <td>{{ customer.archivedReason }}</td>
+                            <td style="font-weight:bold;">{{ customer.archiveDate | date }}</td>
+
+                            <!-- <td>{{ customer.orderTotal | currency:'CHF':'symbol' }}</td>  -->
+                        </tr>
+
+                        <tr *ngIf="!customers.length">
+                            <td colspan="6" class="no-data-found-td">No Records Found</td>
+                        </tr>
+
+                    </tbody>
+
+                </table>
+                
+            </div>
+
+        </div>
+
+    </div>
+
+</div>

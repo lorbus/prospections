@@ -1,0 +1,73 @@
+[{
+  "_id": {
+    "$oid": "6018434b1dde572f246d9ea0"
+  },
+  "prospectionDate": {
+    "$date": "2019-11-28T00:00:00Z"
+  },
+  "firstName": "Andi",
+  "lastName": "Gjonej",
+  "email": "it@ufc.ch",
+  "address": "Rue du Mont-Blanc 11",
+  "bdmName": "Kreshnik Sadiku",
+  "leadFrom": "My prospection",
+  "businessType": "Change Office",
+  "registration": "CH.987.654.321",
+  "businessName": "Union of Financial Corners SA",
+  "locationName": "UFC",
+  "phone": "41227317662",
+  "pending": "Archived",
+  "role": "CEO",
+  "archivedReason": "Contract Signed",
+  "archiveDate": {
+    "$date": "2021-01-31T00:00:00Z"
+  },
+  "note1": "",
+  "note2": "",
+  "stateId": 3983,
+  "state": {
+    "_id": {
+      "$oid": "6018434b1dde572f246d9ea1"
+    },
+    "id": 3983,
+    "abbreviation": "GE",
+    "name": "Geneve",
+    "zip": 1201
+  }
+},{
+  "_id": {
+    "$oid": "60185ab630016c505cf6123b"
+  },
+  "prospectionDate": {
+    "$date": "2018-11-28T00:00:00Z"
+  },
+  "firstName": "Bashkim",
+  "lastName": "Ferizaj",
+  "email": "it@ufc.ch",
+  "address": "Rue du Mont-Blanc 11",
+  "bdmName": "Manuk Haroian",
+  "leadFrom": "My prospection",
+  "businessType": "Change Office",
+  "registration": "CH.0123.654.321",
+  "businessName": "Union of Financial Corners SA",
+  "locationName": "UFC",
+  "phone": "41227317662",
+  "pending": "Archived",
+  "role": "Operator",
+  "archivedReason": "Contract Signed",
+  "archiveDate": {
+    "$date": "2021-01-31T00:00:00Z"
+  },
+  "note1": "",
+  "note2": "",
+  "stateId": 3983,
+  "state": {
+    "_id": {
+      "$oid": "6018434b1dde572f246d9ea1"
+    },
+    "id": 3983,
+    "abbreviation": "GE",
+    "name": "Geneve",
+    "zip": 1201
+  }
+}]

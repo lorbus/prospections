@@ -1,9 +1,8 @@
-// set up ========================
 const
     express         = require('express'),
     exphbs          = require('express-handlebars'),
     hbsLayouts      = require('handlebars-layouts'),
-    bodyParser      = require('body-parser'),      // pull information from HTML POST (express4)
+    bodyParser      = require('body-parser'),
     cookieParser    = require('cookie-parser'),
     errorhandler    = require('errorhandler'),
     csrf            = require('csurf'),
@@ -11,27 +10,29 @@ const
     favicon         = require('serve-favicon'),
     router          = require('./routes/router'),
     database        = require('./lib/database'),
-    app             = express(),                  // create app w/ express
-    port            = 4200,
-
+    // hbsHelpers      = require('handlebars-helpers'),
+    // seeder          = require('./lib/dbSeeder'),
+    app             = express(),
+    // port            = 4200,
     cors            = require("cors");
-
-// configuration =================
 
 class Server {
 
     constructor() {
-        this.initDbSeeder();
         this.initViewEngine();
         this.initExpressMiddleWare();
         this.initCustomMiddleware();
+        this.initDbSeeder();
         this.initRoutes();
         this.start();
     }
 
     start() {
-        app.listen(port, (err) => {
-            console.log('[%s] Listening on http://localhost:%d', process.env.NODE_ENV, port);
+       // app.listen(port, (err) => {
+       //     console.log('[%s] Listening on http://localhost:%d', process.env.NODE_ENV, port);
+       // });
+        app.listen(process.env.PORT || 8080, function (){
+            console.log('CORS-enabled API is running on Port:${process.env.PORT || 8080}')
         });
     }
 
@@ -46,15 +47,11 @@ class Server {
     }
 
     initExpressMiddleWare() {
-        app.use(favicon(__dirname + '/dist/Prospection-Manager/assets/images/favicon.ico'));
-        app.use(express.static(__dirname + '/dist/Prospection-Manager'));
+        app.use(favicon(__dirname + '/public/assets/images/favicon.ico'));
+        app.use(express.static(__dirname + '/public'));
         app.use(morgan('dev'));
-
-        // app.set('port', process.env.PORT || port);
-        // app.set('view engine', 'pug');
-
-        app.use(bodyParser.urlencoded({ extended: true }));   // parse application/x-www-form-urlencoded
-        app.use(bodyParser.json()); // parse application/json
+        app.use(bodyParser.urlencoded({ extended: false }));
+        app.use(bodyParser.json());
         app.use(errorhandler());
         app.use(cookieParser());
 
@@ -63,10 +60,6 @@ class Server {
           optionsSuccessStatus: 200 // some legacy browsers (IE11, various SmartTVs) choke on 204
         };
         app.use(cors(corsOptions));
-
-
-        // app.use(bodyParser.json({ type: 'application/vnd.api+json' })); // parse application/vnd.api+json as json
-        app.use(bodyParser.json())
 
         /*
         app.use(csrf({ cookie: true }));
@@ -86,7 +79,6 @@ class Server {
     }
 
     initCustomMiddleware() {
-
         if (process.platform === "win32") {
             require("readline").createInterface({
                 input: process.stdin,
@@ -103,18 +95,18 @@ class Server {
         });
     }
 
-
     initDbSeeder() {
-        database.open(() => { });
+        database.open(() => {
+
+        });
     }
 
     initRoutes() {
-
         router.load(app, './controllers');
 
         // redirect all others to the index (HTML5 history)
         app.all('/*', (req, res) => {
-            res.sendFile(__dirname + '/dist/Prospection-Manager/index.html');
+            res.sendFile(__dirname + '/public/index.html');
         });
     }
 

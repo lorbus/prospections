@@ -2,14 +2,12 @@
   "name": "prospection-manager",
   "version": "1.0.0",
   "license": "MIT",
-  "engines": {
-    "node": "14.x"
-  },
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
-    "server": "nodemon server.js",
-    "build": "ng build --prod",
+    "start": "npm run build & concurrently --kill-others \"npm run serve-api\" \"npm run serve\"",
+    "serve": "ng serve --proxy-config proxy.conf.json",
+    "build": "ng build --prod --output-path=public",
+    "serve-api": "node server.js",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e"
@@ -30,7 +28,6 @@
     "angular2-csv": "0.2.5",
     "body-parser": "^1.19.0",
     "cookie-parser": "^1.4.5",
-    "cors": "^2.8.5",
     "csurf": "^1.11.0",
     "errorhandler": "^1.5.1",
     "express": "^4.17.1",
@@ -50,14 +47,13 @@
     "zone.js": "~0.9.1"
   },
   "resolutions": {
-    "@babel/preset-env": "7.11.0"
+    "@babel/preset-env": "7.5.5"
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "^0.803.29",
     "@angular/cli": "^8.3.29",
     "@angular/compiler-cli": "^8.2.14",
     "@angular/language-service": "^8.2.14",
-    "@babel/core": "^7.12.16",
     "@types/jasmine": "~3.3.8",
     "@types/jasminewd2": "^2.0.8",
     "@types/node": "~8.9.4",

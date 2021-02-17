@@ -6,6 +6,7 @@ import { LocalStorageService } from 'ngx-webstorage';
 import { ValidationService } from '../shared/validation.service';
 import { IUser } from '../shared/interfaces';
 import { DataService } from '../core/data.service';
+import { NotificationService } from '../notification.service';
 
 @Component({
     selector:       'app-login',
@@ -28,10 +29,12 @@ export class LoginComponent implements OnInit {
         role: '',
     };
 
-    constructor(private formBuilder: FormBuilder,
+    constructor(
+                private formBuilder: FormBuilder,
                 private router: Router,
                 private dataService: DataService,
-                private storage: LocalStorageService
+                private storage: LocalStorageService,
+                private notifyService: NotificationService
     ) { }
 
     ngOnInit() {
@@ -69,7 +72,8 @@ export class LoginComponent implements OnInit {
               this.errorMessage = 'Unable to get user. Username or password not correct';
             }
           },
-          (err: any) => console.log(err));
+          (err: any) => (this.notifyService.showError(err.error.message || 'Server Error', 'Error!')),
+                  () => console.log('getCustomersPage() retrieved customers'));
 
     }
 

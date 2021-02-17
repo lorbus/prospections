@@ -4,8 +4,7 @@
   "license": "MIT",
   "scripts": {
     "ng": "ng",
-    "start": "node server.js",
-    "start:dev": "nodemon -r dotenv/config server.js",
+    "start": "npm run build & concurrently --kill-others \"npm run serve-api\" \"npm run serve\"",
     "serve": "ng serve --proxy-config proxy.conf.json",
     "build": "ng build --prod --output-path=public",
     "serve-api": "node server.js",
@@ -45,7 +44,9 @@
     "rxjs": "~6.4.0",
     "serve-favicon": "~2.5.0",
     "tslib": "^1.14.1",
-    "zone.js": "~0.9.1"
+    "zone.js": "~0.9.1",
+    "concurrently": "^4.0.1",
+    "cors": "^2.8.5"
   },
   "resolutions": {
     "@babel/preset-env": "7.5.5"

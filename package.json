@@ -4,7 +4,8 @@
   "license": "MIT",
   "scripts": {
     "ng": "ng",
-    "start": "npm run build & concurrently --kill-others \"npm run serve-api\" \"npm run serve\"",
+    "start": "node server.js",
+    "start:dev": "nodemon -r dotenv/config server.js",
     "serve": "ng serve --proxy-config proxy.conf.json",
     "build": "ng build --prod --output-path=public",
     "serve-api": "node server.js",

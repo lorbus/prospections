@@ -1,6 +1,6 @@
-# Propection Manager - UFC webtool
+# Propection Manager - webtool
 
-Propection Manager service provides a useful web tool for UFC Business Developer Managers for their prospection activity. Facilitating reports and especially the follow up of the BD activities in the field.
+Propection Manager service provides a useful web tool for prospection activity. Facilitating reports and especially the follow up of the BD activities in the field.
 
 ## Software Requirements To Run Locally (there's a Docker option below as well)
 

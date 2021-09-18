@@ -1,6 +1,0 @@
-{
-    "databaseConfig": {
-        "host": "username:password@cluster0.xtwx0.mongodb.net",
-        "database": "prospectionmanager?retryWrites=true&w=majority"
-    }
-}
